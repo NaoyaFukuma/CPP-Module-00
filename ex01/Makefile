@@ -15,14 +15,17 @@ all: $(NAME)
 
 -include $(DEPENDS)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJSDIR) $(OBJS)
 	$(CXX) -o $(NAME) $(OBJS)
 
 $(OBJSDIR)/%.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ -c $<
 
+objs:
+	mkdir -p objs
+
 clean:
-	$(RM) $(OBJS) $(DEPENDS)
+	$(RM) -rf $(OBJSDIR)
 
 fclean: clean
 	$(RM) $(NAME)
