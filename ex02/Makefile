@@ -5,7 +5,7 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -MP
 CPPFLAGS = -Iincludes
 
-SRCS = test.cpp Account.cpp
+SRCS = tests.cpp Account.cpp
 VPATH = srcs
 
 OBJSDIR = objs
